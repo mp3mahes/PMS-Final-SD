@@ -1,0 +1,18 @@
+html
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+body{
+ background-image: url("images/blue_wave.jpg");
+}
+
+nav 
+{
+	text-align: right;
+}
+
+nav a
+{
+	color: black;
+	text-decoration: none;
+}

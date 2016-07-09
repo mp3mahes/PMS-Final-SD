@@ -1,0 +1,113 @@
+html *{
+	border-radius: 0 !important;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+	font-weight: 200;
+}
+/*
+body{
+	background-image: url(https://s3.amazonaws.com/ooomf-com-files/7FeqaLPSP2cI6wCWFJZP_DSC_0178.JPG);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+*/
+h1,h2,h3,h4,h5,h6{
+	font-weight: 200;
+}
+a{
+	font-weight: 400;
+}
+section a{
+	color: red;
+}
+section strong{
+	font-weight: 500;
+}
+section .alert{
+	font-weight: 500;
+}
+section .alert strong{
+	font-weight: 900;
+}
+section a:hover{
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+.navbar-inner {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border-bottom: 1px solid #CACACA;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.navbar a.brand{
+	width: 160px;
+	background-position: 0% 7px;
+}
+.navbar .nav{
+	font-size: 13px;
+}
+.navbar .nav li a{
+	border-radius: 0;
+	text-shadow: none;
+}
+.navbar .btn-navbar{
+	background: #ffffff;
+	text-shadow: none;
+}
+.navbar .btn-navbar:hover{
+	background: #4DBCE9;
+}
+.navbar .btn-navbar .icon-bar{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-color: #353540;
+}
+.navbar .btn-navbar:hover .icon-bar{
+	background-color: #fff;
+}
+.hero-unit{
+	padding: 20px;
+	background-color: rgba(227, 227, 227, 0.8);
+}
+.btn{
+	background: #353540;
+	background: rgba(87, 87, 91, 0.95);
+	border: 0 !important;
+	text-shadow: none;
+	color: #fff;
+	font-weight: 300;
+}
+.btn:hover{
+	background: #4DBCE9;
+	color: #fff;
+}
+.btn.btn-primary{
+	background: #4DBCE9;
+	color: #353540;
+}
+.btn.btn-primary:hover{
+	color: #fff;
+}
+@media (min-width: 980px) {
+	.documenter-project-mymail .navbar .container{
+		height: 50px;
+		overflow: hidden;
+	}
+	.documenter-project-mymail .navbar:hover .container{
+		height: 120px;
+	}
+}
+@media (max-width: 979px) {
+	.navbar a.brand {
+		background-position: 0% 1px;
+		height: 50px;
+	}
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" id="themestyle" href="jQueryTourPlugin/css/theme1/style.css">
+<script src="jQueryTourPlugin/js/jquery-1.9.1.min.js"></script>
+<script src="jQueryTourPlugin/js/jTour.min.js"></script>
+
+
+	
+		<!-- <link rel="stylesheet" type="text/css" href=".css" > -->
+	    
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<script src="GmapF.js"></script>
+	
+	<body>
+		<div id="header-wrapper-fitness">
+	<div id="header-pages" class="container">
+		<div id="logo">
+			<h1><a href="#">Fitness</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html" accesskey="1" title="">Home</a></li>
+				<li><a href="#" id="starttour" accesskey="2" title="">Help</a></li>
+				<li><a href="contact.html" accesskey="5" title="">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+<br>
+<br>
+<div id = "outmap">
+	<h1>  Find the Fitness centers around you </h1>
+</div>
+	<div id="map2" class="map-help">
+		</div>
+		
+		<br>
+		<div id = "belowmap">
+			<h4>
+		<form>
+
+			<label>Enter the Zipcode: <input type = "text" id="search"/></label>
+			<input type = "button" id="search_button" onclick="move();" value = "Search"/>
+		</form>
+		
+		<p>Map of nearby gyms, parks, trails, etc.</p>
+	</h4>
+	</div>
+
+</div>
+
+	<div id="wrapper">
+	<div id="staff" class="container">
+		<div class="title">
+	
+		
+	<!--	<div class="links">
+			<a href="video.php"><img src="images/videos.png" height="200" width="200" align = "middle" alt="fitness"  margin-left: "100"/></a>
+			<a href="reading.html"><img src="images/readings.png" height="200" width="200" align = "middle" alt="fitness" /></a>
+			<a href="index.html"><img src="images/back.png" height="200" width="200" align = "right" alt="fitness" /></a>
+		</div>
+
+	-->
+	<span><h3><center>&nbsp;&nbsp;&nbsp;&nbsp;Click below to explore more </h3></span> </div>
+		<div class="tbox1"><td><a href="reading.html"><img src="images/readings.png" width="250" height="250" alt="" /></a></td></div>
+		<div class="tbox2"><td><a href="video.php?language=english&type=exercise"><img src="images/videos.png" width="250" height="250" alt="" />  </a></td></div>
+<script>
+$(document).ready(function() {
+
+	var tourdata = [
+		{
+			html: "Place your cursor over this box at anytime to control the interactive help."
+		},{
+			html: "Enter your zipcode here.",
+			element: $("#search"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 's'
+		},{
+			html: "Then click this button...",
+			element: $("#search_button"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 's'
+		},{
+			html: "and all the nearby gyms, parks, and trails will be displayed here.",
+			element: $("#map2"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'n'
+		},{
+			html: "Click here for readings.",
+			element: $(".tbox1"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'n'
+		},{
+			html: "Click here for videos.",
+			element: $(".tbox2"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'n'
+		}
+	];
+	
+	var myTour = jTour(tourdata,{
+		axis:'y', // use only one axis prevent flickring on iOS devices
+		onStop:function(){
+		},
+		onChange:function(current){
+		},
+		onFinish:function(current){
+		}
+	} 
+	);
+	
+	//myTour.start();
+	
+	
+	//the Button
+	$('#starttour').click(function(){
+		myTour.restart();
+	});
+	
+});
+</script>
+	</body>
+</html>

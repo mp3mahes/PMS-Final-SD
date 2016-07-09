@@ -1,0 +1,64 @@
+html
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+}
+
+body 
+{
+    background-repeat: repeat;
+    background-position: right top;
+    background-attachment:fixed;
+
+}
+
+#{
+    text-align: left;
+}
+
+
+nav {
+    margin:auto;
+    margin-right: auto;
+    width: 60%;
+    padding: 20px;
+    list-style:none;
+padding:4;
+border-top:1 solid #ccc;
+border-left:2 solid #ccc;
+border-bottom:1 solid #ccc;
+}
+
+
+a {
+float:left;
+background-color: l#48D1CC;
+}
+
+ a{
+font-size: 13;
+
+padding:20px 90px;
+text-decoration:none;
+color:#069;
+border-right:3px solid #ccc;
+font-weight:bold;
+font-family: serif;
+ 
+}   
+
+a:hover {
+color:#c00;
+background-color:yellow;
+list-style-position: center;
+
+
+}
+
+div.links{
+position: "center"
+
+}
+
+

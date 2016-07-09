@@ -1,0 +1,46 @@
+<?php
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+$fitArray = $db_handle->runQuery("SELECT * FROM videos WHERE type=Exercise ORDER BY VidID DESC");
+$healthArray = $db_handle->runQuery("SELECT * FROM videos WHERE type=disease management ORDER BY VidID DESC");
+$dietArray = $db_handle->runQuery("SELECT * FROM videos WHERE type=Nutrition ORDER BY VidID DESC");
+?>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Console</title>
+	<link rel="stylesheet" type="text/css" href="admin.css">
+</head>
+<body>
+	<nav><a href="login.html">Logout</a></nav>
+	<h1>Admin Console</h1>
+	<hr />
+	<h2>Website Usage Reports</h2>
+	<textarea rows="25" cols="100" placeholder="Report output area"></textarea>
+	<form id="pdf">
+		<button type="button">Export to PDF</button>
+	</form>
+	<hr />
+	<h2>Add to Repository</h2>
+	<form id="repository">
+		<input type="radio" name="type" value="video">Video</input>
+		<br />
+		<input type="radio" name="type" value="reading">Reading</input>
+		<br />
+		<br />
+		<input type="radio" name="language" value="english">English</input>
+		<br />
+		<input type="radio" name="language" value="spanish">Spanish</input>
+		<br />
+		<br />
+		<h4>URL/Filepath</h4>
+		<input type="text" name="url"></input>
+		<button type="button">Browse...</input>
+	</form>
+</body>
+</html>

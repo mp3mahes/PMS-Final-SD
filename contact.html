@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" id="themestyle" href="jQueryTourPlugin/css/theme1/style.css">
+<script src="jQueryTourPlugin/js/jquery-1.9.1.min.js"></script>
+<script src="jQueryTourPlugin/js/jTour.min.js"></script>
+   
+    
+    
+        <style>
+      /* NOTE: rgb(30,30,40)The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body { background:r#332d2d ;}
+form { max-width:420px; margin-top:100px; margin-left: 300px }
+
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #CC4949; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#CC6666;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#CC4949; }
+    </style>
+
+    
+        <script src="js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+  <body>
+    <div id="header-wrapper-contactus">
+  <div id="header-pages" class="container">
+    <div id="logo">
+      <h1><a href="#">Feedbacks</a></h1>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><a href="index.html" accesskey="1" title="">Home</a></li>
+        <li><a href="#" id="starttour" accesskey="2" title="">Help</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+     
+     <form class="mail" action="mail_handler.php" method="post">
+       
+  <input type="text" name="first_name" id="fname"class="feedback-input" placeholder="First Name" />   
+  <input type="text" name="last_name" id="lname" class="feedback-input" placeholder="Last Name" />
+  <input type="text" name="email" id="e_mail" class="feedback-input" placeholder="Email" />
+ <input type="text" name="subject" id="sub" class="feedback-input" placeholder="Subject" />
+<br>
+  <textarea rows="5" name="message" cols="30" id="mess" class="feedback-input" placeholder="Comment"></textarea>
+  <input type="submit" name="submit" id="button" value="Submit">
+</form>
+
+      <script>
+$(document).ready(function() {
+
+	var tourdata = [
+		{
+			html: "Place your cursor over this box at anytime to control the interactive help."
+		},{
+			html: "To send a message, first enter your first name here.",
+			element: $("#fname"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'e'
+		},{
+			html: "Then enter your last name here.",
+			element: $("#lname"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'e'
+		},{
+			html: "Then enter your email address here.",
+			element: $("#e_mail"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'e'
+		},{
+			html: "Then enter your subject here.",
+			element: $("#sub"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'e'
+		},{
+			html: "Then enter the contents of your message here.",
+			element: $("#mess"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'e'
+		},{
+			html: "Finally, click this button to send your message.",
+			element: $("#button"),
+			overlayOpacity: 0.8,
+			expose: true,
+			position: 'e'
+		}
+	];
+	
+	var myTour = jTour(tourdata,{
+		axis:'y', // use only one axis prevent flickring on iOS devices
+		onStop:function(){
+		},
+		onChange:function(current){
+		},
+		onFinish:function(current){
+		}
+	} 
+	);
+	
+	//myTour.start();
+	
+	
+	//the Button
+	$('#starttour').click(function(){
+		myTour.restart();
+	});
+	
+});
+</script>
+
+    
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
